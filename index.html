@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deep Cuts</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <button id="btn-mute" class="mute" aria-label="Toggle sound">🔊</button>
+  <div id="fx" class="fx"></div>
+
+  <main class="app" id="app">
+
+    <!-- START SCREEN -->
+    <section id="screen-start" class="screen active">
+      <div class="logo">💿</div>
+      <h1>Deep Cuts</h1>
+      <p class="tag">7 prompts. Name a song.<br>The rarer your answer, the more points you score.</p>
+
+      <div class="stats">
+        <div><span id="stat-streak">0</span><small>day streak 🔥</small></div>
+        <div><span id="stat-best">0</span><small>best score</small></div>
+      </div>
+
+      <button id="btn-daily" class="btn primary">Play Today's Daily</button>
+      <button id="btn-endless" class="btn ghost">Endless Mode</button>
+
+      <div class="legend">
+        <span class="chip t1">Chart-topper 10</span>
+        <span class="chip t2">Fan favorite 30</span>
+        <span class="chip t3">Deep cut 60</span>
+        <span class="chip t4">One in a million 100</span>
+      </div>
+      <p class="fine">Answers not in the song library score 0, so rare is only good if it's real.</p>
+    </section>
+
+    <!-- GAME SCREEN -->
+    <section id="screen-game" class="screen">
+      <div class="topbar">
+        <div id="dots" class="dots"></div>
+        <div class="depth">Depth <b id="score">0</b> m</div>
+      </div>
+
+      <div class="timer"><div id="timer-fill"></div></div>
+      <div id="secs" class="secs">25</div>
+
+      <div id="combo" class="combo"></div>
+      <h2 id="prompt" class="prompt"></h2>
+
+      <form id="form" autocomplete="off">
+        <input id="answer" type="text" placeholder="Type a song title..." maxlength="60" autocapitalize="off" autocorrect="off" spellcheck="false">
+        <button id="btn-submit" class="btn primary" type="submit">Lock it in</button>
+      </form>
+
+      <div id="feedback" class="feedback"></div>
+    </section>
+
+    <!-- END SCREEN -->
+    <section id="screen-end" class="screen">
+      <p class="small-label" id="end-mode"></p>
+      <div class="big-score"><span id="end-score">0</span><small id="end-sub">points</small></div>
+      <h2 id="end-rank" class="rank"></h2>
+      <div id="end-grid" class="grid"></div>
+      <ul id="end-list" class="list"></ul>
+      <p id="end-next" class="fine"></p>
+
+      <button id="btn-share" class="btn primary">Copy result</button>
+      <button id="btn-again" class="btn ghost">Play Endless</button>
+      <button id="btn-home" class="btn link">Home</button>
+    </section>
+
+  </main>
+  <script src="styles/script.js"></script>
+</body>
+</html>
